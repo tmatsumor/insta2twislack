@@ -1,0 +1,9 @@
+[submodule "insta_api_php"]
+	path = insta_api_php
+	url = https://github.com/tmatsumor/insta_api_php.git
+[submodule "twitter_api_php"]
+	path = twitter_api_php
+	url = https://github.com/tmatsumor/twitter_api_php.git
+[submodule "slack_api_php"]
+	path = slack_api_php
+	url = https://github.com/tmatsumor/slack_api_php.git
