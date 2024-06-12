@@ -12,8 +12,8 @@ $SLACK_TOKEN = 'YOUR_SLACK_API_USER_OAUTH_TOKEN_HERE';
 $SLACK_CHANNEL = 'YOUR_SLACK_CHANNEL_NAME_HERE';
 
 $in = new InstaAPI($INSTA_TOKEN);
-$in->fetchNewPost(function($d) use($TWI_USERPWD, $SLACK_TOKEN, $SLACK_CHANNEL){
-    $tw = new TwitterAPI($TWI_USERPWD);
+$tw = new TwitterAPI($TWI_USERPWD);    // token refresher is working in this constructor
+$in->fetchNewPost(function($d) use($tw, $SLACK_TOKEN, $SLACK_CHANNEL){
     var_dump($tw->tweet($d['caption'].' '.$d['permalink']));
     $sl = new SlackAPI($SLACK_TOKEN);
     var_dump($sl->fileUpload($SLACK_CHANNEL, $d['caption'].' '.$d['permalink'], $d['media_url']));
